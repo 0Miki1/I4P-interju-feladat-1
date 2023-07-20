@@ -6,13 +6,8 @@ using System.Threading.Tasks;
 
 namespace I4P___interju_feladat___1
 {
-    internal class Program
+    internal class Decrypt : Transfer
     {
-        static void Main(string[] args)
-        {
 
-
-            Console.ReadKey();
-        }
     }
 }
