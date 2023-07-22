@@ -13,7 +13,7 @@ namespace I4P___interju_feladat___1
             int msgLenght = msg.Length;
             string encryptedMsg = string.Empty;
 
-            foreach (char c in msg)
+            for (int i = 0; i < msgLenght; i++)
             {
 
             }
