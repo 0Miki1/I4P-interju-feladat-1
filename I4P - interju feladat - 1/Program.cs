@@ -10,7 +10,7 @@ namespace I4P___interju_feladat___1
     {
         static void Main(string[] args)
         {
-
+            
 
             Console.ReadKey();
         }
