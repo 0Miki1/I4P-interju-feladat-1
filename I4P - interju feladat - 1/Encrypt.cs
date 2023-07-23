@@ -15,8 +15,19 @@ namespace I4P___interju_feladat___1
 
             for (int i = 0; i < msgLenght; i++)
             {
+                int msgCode = GetCharCode(msg[i]);
+                int keyCode = GetCharCode(key[i]);
+                int encryptedCode = msgCode + keyCode;
 
+                if (encryptedCode > 26)
+                {
+                    encryptedCode = encryptedCode % 27;
+                }
+
+                encryptedMsg += GetChar(encryptedCode);
             }
+
+            return encryptedMsg;
         }
     }
 }
