@@ -34,7 +34,7 @@ namespace I4P___interju_feladat___1
 
                 if (!MsgFormat(msg) || !MsgFormat(key))
                 {
-                    Console.WriteLine("\n Helytelen a megadott kulcs vagy üzenet formátuma, próbáld újra!");
+                    Console.WriteLine("\n Helytelen a megadott kulcs vagy ag üzenet formátuma, próbáld újra!");
                     msgOk = false;
                 }
 
@@ -48,9 +48,42 @@ namespace I4P___interju_feladat___1
             Console.WriteLine($"A titkosított üzenet: {encrypter.EncryptMsg(msg, key)}");
         }
 
+        private static void MsgDecryption()
+        {
+            string encMsg = string.Empty;
+            string key = string.Empty;
+            Decrypt decrypter = new Decrypt();
+            bool msgOk = true;
+
+            do
+            {
+
+                Console.Write("Add meg a rejtjelezett üzenetet: ");
+                encMsg = Console.ReadLine();
+
+                Console.Write("Add meg a kulcsot az üzenethez: ");
+                key = Console.ReadLine();
+
+                if (!MsgFormat(encMsg) || !MsgFormat(key))
+                {
+                    Console.WriteLine("\n Helytelen a megadott kulcs vagy az üzenet formátuma, próbáld újra!");
+                    msgOk = false;
+                }
+
+                if (encMsg.Length > key.Length)
+                {
+                    Console.WriteLine("A kulcsnak leglább olyan hosszúnak kell lennie mint az üzenetnek!");
+                    msgOk = false;
+                }
+            } while (!msgOk);
+
+            Console.WriteLine($"Az eredeti üzenet: {decrypter.DecrypMsg(encMsg, key)}");
+        }
+
         static void Main(string[] args)
         {
-            MsgEncryption();
+            //MsgEncryption();
+            //MsgDecryption();
           
             Console.ReadKey();
         }
