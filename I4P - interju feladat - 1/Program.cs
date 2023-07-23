@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using System.Runtime.InteropServices;
+using System.ComponentModel.Design;
 
 namespace I4P___interju_feladat___1
 {
@@ -18,6 +20,8 @@ namespace I4P___interju_feladat___1
 
         private static void MsgEncryption()
         {
+            Console.Clear();
+
             string msg = string.Empty;
             string key = string.Empty;
             Encrypt encrypter = new Encrypt();
@@ -50,6 +54,8 @@ namespace I4P___interju_feladat___1
 
         private static void MsgDecryption()
         {
+            Console.Clear();
+
             string encMsg = string.Empty;
             string key = string.Empty;
             Decrypt decrypter = new Decrypt();
@@ -80,12 +86,52 @@ namespace I4P___interju_feladat___1
             Console.WriteLine($"Az eredeti üzenet: {decrypter.DecrypMsg(encMsg, key)}");
         }
 
+        private static void Menu()
+        {
+            Console.Clear();
+
+            bool inputOK = true;
+            int input = 0;
+
+            do
+            {
+                Console.WriteLine("1 - Titkosítás\n2 - Visszafejtés\n3 - Kilépés");
+
+                try
+                {
+                    input = Convert.ToInt32(Console.ReadLine());
+                }
+                catch (Exception)
+                {
+                    inputOK = false;
+                }
+
+                inputHandler(input);
+            } while (input < 1 || input > 3 || !inputOK);
+        }
+
+        private static void inputHandler(int input)
+        {
+            switch (input)
+            {
+                case 1:
+                    MsgEncryption();
+                    break;
+                case 2:
+                    MsgDecryption();
+                    break;
+            }
+
+            Console.WriteLine("\nA menübe visszalépéshez nyomjon meg egy gombot!");
+
+            Console.ReadKey();
+
+            Menu();
+        }
+
         static void Main(string[] args)
         {
-            //MsgEncryption();
-            //MsgDecryption();
-          
-            Console.ReadKey();
+            Menu();
         }
     }
 }
