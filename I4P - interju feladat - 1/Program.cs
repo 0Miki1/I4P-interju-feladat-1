@@ -10,19 +10,8 @@ namespace I4P___interju_feladat___1
     {
         static void Main(string[] args)
         {
-            Encrypt e = new Encrypt();
 
-            string msg = string.Empty;
-            string key = string.Empty;
-
-            Console.Write("Üzenet: ");
-            msg = Console.ReadLine();
-
-            Console.Write("Kulcs: ");
-            key = Console.ReadLine();
-
-            Console.WriteLine(e.EncryptMsg(msg, key));
-
+          
             Console.ReadKey();
         }
     }
