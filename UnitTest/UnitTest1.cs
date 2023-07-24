@@ -2,15 +2,14 @@ namespace UnitTest
 {
     public class Tests
     {
+        private Encrypt enc;
+        private Decrypt dec;
+
         [SetUp]
         public void Setup()
         {
-        }
-
-        [Test]
-        public void Test1()
-        {
-            Assert.Pass();
+            enc = new Encrypt();
+            dec = new Decrypt();
         }
     }
 }
