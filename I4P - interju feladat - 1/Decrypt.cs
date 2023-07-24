@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace I4P___interju_feladat___1
 {
-    internal class Decrypt : Transfer
+    public class Decrypt : Transfer
     {
         public string DecrypMsg(string encryptedMsg, string key)
         {
