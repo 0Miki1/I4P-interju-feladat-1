@@ -67,5 +67,15 @@ namespace UnitTest
 
             Assert.IsTrue(space == GetChar(code));
         }
+
+        [Test]
+        public void MsgFormatString()
+        {
+            string goodFormat = "helloworld";
+            string badFormat = "HELLOWORLD1";
+
+            Assert.IsTrue(Program.MsgFormat(goodFormat));
+            Assert.IsFalse(Program.MsgFormat(badFormat));
+        }
     }
 }
