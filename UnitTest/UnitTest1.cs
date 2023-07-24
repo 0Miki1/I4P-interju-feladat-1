@@ -11,5 +11,15 @@ namespace UnitTest
             enc = new Encrypt();
             dec = new Decrypt();
         }
+
+
+        [Test]
+        public void Encryption()
+        {
+            string message = "helloworld";
+            string key = "abcdefgijkl";
+
+            StringAssert.IsMatch("hfnosauzun", enc.EncryptMsg(message, key));
+        }
     }
 }
