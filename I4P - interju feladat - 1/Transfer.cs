@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace I4P___interju_feladat___1
 {
-    public abstract class Transfer
+    public class Transfer
     {
         protected int GetCharCode(char character)
         {
