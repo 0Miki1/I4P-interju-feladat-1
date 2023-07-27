@@ -9,9 +9,9 @@ using System.ComponentModel.Design;
 
 namespace I4P___interju_feladat___1
 {
-    internal class Program
+    public class Program
     {
-        private static bool MsgFormat(string msg)
+        public static bool MsgFormat(string msg)
         {
             Regex msgReg = new Regex(@"^([a-z]| )+$");
 
