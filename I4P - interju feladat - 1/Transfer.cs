@@ -10,6 +10,8 @@ namespace I4P___interju_feladat___1
     {
         protected int GetCharCode(char character)
         {
+            char.ToLower(character);
+
             if (character == ' ')
             {
                 return 26;
@@ -20,9 +22,17 @@ namespace I4P___interju_feladat___1
 
         protected char GetChar(int code)
         {
-            if (code == 26)
+            if (code < 0)
+            {
+                code += 27;
+            }
+            else if (code == 26)
             {
                 return ' ';
+            }
+            else if (code > 26)
+            {
+                code %= 27;
             }
 
             return (char)('a' + code);

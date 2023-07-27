@@ -15,6 +15,8 @@ namespace I4P___interju_feladat___1
 
             for (int i = 0; i < msgLenght; i++)
             {
+                //A more detailed code for encryption
+                /*
                 int msgCode = GetCharCode(msg[i]);
                 int keyCode = GetCharCode(key[i]);
                 int encryptedCode = msgCode + keyCode;
@@ -25,6 +27,10 @@ namespace I4P___interju_feladat___1
                 }
 
                 encryptedMsg += GetChar(encryptedCode);
+                */
+
+                //A simplified code for encryption
+                encryptedMsg += GetChar(GetCharCode(msg[i]) + GetCharCode(key[i]));
             }
 
             return encryptedMsg;
