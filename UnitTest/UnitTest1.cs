@@ -20,6 +20,7 @@ namespace UnitTest
             string key = "abcdefgijkl";
 
             StringAssert.IsMatch("hfnosauzun", enc.EncryptMsg(message, key));
+            StringAssert.DoesNotMatch("encrypt", enc.EncryptMsg(message, key));
         }
 
         [Test]
@@ -29,24 +30,28 @@ namespace UnitTest
             string key = "abcdefgijkl";
 
             StringAssert.IsMatch("helloworld", dec.DecrypMsg(encMessage, key));
+            StringAssert.DoesNotMatch("decrypt", dec.DecrypMsg(encMessage, key));
         }
 
         [Test]
         public void TransferCharToCode()
         {
-            char a = 'a';
-            int code = 0;
-
-            Assert.IsTrue(code == GetCharCode(a));
+            Assert.IsTrue(0 == GetCharCode('a'));
+            Assert.IsFalse(0 == GetCharCode('A'));
+            Assert.IsTrue(25 == GetCharCode('z'));
+            Assert.IsTrue(4 == GetCharCode('e'));
+            Assert.IsFalse(16 == GetCharCode('p'));
+            Assert.IsFalse(0 == GetCharCode('@'));
         }
 
         [Test]
         public void TransferCodeToChar()
         {
-            int code = 25;
-            char z = 'z';
-
-            Assert.IsTrue(z == GetChar(code));
+            Assert.IsTrue('z' == GetChar(25));
+            Assert.IsTrue('a' == GetChar(0));
+            Assert.IsTrue('k' == GetChar(10));
+            Assert.IsFalse('w' == GetChar(23));
+            Assert.IsFalse('@' == GetChar(0));
         }
 
         [Test]
