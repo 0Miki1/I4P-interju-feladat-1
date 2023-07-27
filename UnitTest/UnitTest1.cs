@@ -13,7 +13,6 @@ namespace UnitTest
             dec = new Decrypt();
         }
 
-
         [Test]
         public void Encryption()
         {
