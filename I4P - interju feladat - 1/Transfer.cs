@@ -10,7 +10,10 @@ namespace I4P___interju_feladat___1
     {
         protected int GetCharCode(char character)
         {
-            char.ToLower(character);
+            if (char.IsUpper(character))
+            {
+                return char.ToLower(character) - 'a';
+            }
 
             if (character == ' ')
             {

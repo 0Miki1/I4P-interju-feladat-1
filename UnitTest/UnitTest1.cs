@@ -36,8 +36,13 @@ namespace UnitTest
         [Test]
         public void TransferCharToCode()
         {
+            for (int i = 0; i <= 25; i++)
+            {
+                Assert.IsTrue(i == GetCharCode((char)i) + 'a');
+            }
+
             Assert.IsTrue(0 == GetCharCode('a'));
-            Assert.IsFalse(0 == GetCharCode('A'));
+            Assert.IsTrue(0 == GetCharCode('A'));
             Assert.IsTrue(25 == GetCharCode('z'));
             Assert.IsTrue(4 == GetCharCode('e'));
             Assert.IsFalse(16 == GetCharCode('p'));
@@ -47,6 +52,11 @@ namespace UnitTest
         [Test]
         public void TransferCodeToChar()
         {
+            for (char c = 'a'; c <= 'z'; c++)
+            {
+                Assert.IsTrue(c == GetChar(c - 'a'));
+            }
+
             Assert.IsTrue('z' == GetChar(25));
             Assert.IsTrue('a' == GetChar(0));
             Assert.IsTrue('k' == GetChar(10));
@@ -55,7 +65,7 @@ namespace UnitTest
         }
 
         [Test]
-        public void TransferCharToCodeSpace()
+        public void TransferCharToCode_Space()
         {
             char space = ' ';
             int code = 26;
@@ -64,7 +74,7 @@ namespace UnitTest
         }
 
         [Test]
-        public void TransferCodeToCharSpace()
+        public void TransferCodeToChar_Space()
         {
             int code = 26;
             char space = ' ';
