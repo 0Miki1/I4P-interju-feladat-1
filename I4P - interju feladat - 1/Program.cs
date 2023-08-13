@@ -120,6 +120,9 @@ namespace I4P___interju_feladat___1
                 case 2:
                     MsgDecryption();
                     break;
+                case 3:
+                    Environment.Exit(0);
+                    break;
             }
 
             Console.WriteLine("\nA menübe visszalépéshez nyomjon meg egy gombot!");
